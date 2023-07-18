@@ -1,0 +1,36 @@
+<p>eventbinding1 works!</p>
+
+<!-- template reference variables -->
+<!-- #uniquename -->
+
+<input #name  type ="text" placeholder="Enter your name">
+<br> <br>
+
+<button (click)="onSend(name)">Send</button>
+<br><br>
+
+<input #name1 type ="text" placeholder ="Enter your name">
+<br><br>
+<button (click)="onSend1(name1.value)">Send</button>
+
+
+<!-- Simple real example -->
+
+<label for ="">Number1:: &nbsp;&nbsp;</label>
+
+<input #num1 type="text" placeholder="Enter the number1">
+<br><br>
+
+<label for ="">Number2:: &nbsp;&nbsp;</label>
+
+<input #num2 type="text" placeholder="Enter the number 2">
+<br><br>
+
+<button (click)="onAddition(num1.value,num2.value)">Addition</button>
+<br><br>
+<input type="text" [value]="result" placeholder="Display result">
+<br><br>
+<!-- Change event -->
+<!-- (change)="EventHandler" -->
+
+<input #myname type="text"(change)="onChange(myname)" placeholder="Enter the name">

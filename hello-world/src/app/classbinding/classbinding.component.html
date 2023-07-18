@@ -1,0 +1,13 @@
+<p>classbinding works!</p>
+<h2 [class]="myclass">
+    classbinding applied
+</h2>
+
+<h2 [class.danger]="rating<5"
+    [class.warning]="rating>5">
+    class binding on classes
+</h2>
+
+<div [ngClass]="myjson">
+    ngClass Applied
+</div>

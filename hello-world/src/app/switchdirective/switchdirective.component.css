@@ -1,0 +1,12 @@
+div{
+    height: 250px;
+    width: 350px;
+}
+.default{
+    background-color: black;
+    color:white
+}
+.wrong{
+    background-color: orange;
+    color:black
+}

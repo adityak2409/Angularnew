@@ -1,0 +1,57 @@
+<p>parent works!</p>
+<app-child2></app-child2>
+<input #msg type="text" placeholder="Enter the text">
+
+<button (click)="onsendmsg(msg.value)">Send</button>
+<br><br>
+
+<!-- ***** -->
+<!-- 
+<input #msg1 type="text" placeholder="Enter the text">
+
+<button (click)="onsendmsg1(msg1.value)">Send</button> -->
+
+<ul>
+    <li *ngFor="let item of arrobj";index as i;
+    
+    > {{item}}</li>
+</ul> 
+
+<table border="1px">
+<thead>
+    <th>id</th>
+    <th>name</th>
+    <th>price</th>
+    <th>quantity</th>
+</thead>
+<tbody>
+    <tr *ngFor="let item of arrproduct;index as i"
+        
+    >
+    <td>{{i+1}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.price}}</td>
+    <td>{{item.qty}}</td>
+</tr>
+</tbody>
+
+</table>
+
+<hr>
+<app-child
+ [parentstrdata]="strdata"
+ [parentjsondata]="jsonobj"
+ [parentstrMessage]="mymsg"
+ [parentarrData]="arrobj"
+ [parentarranyData]="arrproduct"
+></app-child>
+
+<app-child2
+ (childStrEvent)="childStrData=$event"
+ (childJsonEvent)="childJsonData=$event"
+></app-child2>
+<h2>{{childStrData}}</h2>
+<h2>{{childJsonData.id}}</h2>
+<h2>{{childJsonData.fname}}</h2>
+<h2>{{childJsonData.lname}}</h2>
+

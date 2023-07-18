@@ -1,0 +1,112 @@
+<p>demotdf works!</p>
+
+<div class="coontainer">
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <form #f="ngForm"(ngSubmit)="onsubmit(f)">
+                    {{f.value | json}}
+             <label>Username :: </label>
+             <input type="text" class="form-control"
+             ngModel name="myusername"
+             minlength=4
+             pattern="admin"
+             #username="ngModel" required
+             placeholder="Enter the username">
+
+             <div *ngIf="username.touched &&!username.valid"
+              class="alert alert-danger">**please enter username
+             
+              <div *ngIf="username.errors?.minlength">**please enter the minimum 4 digit
+                {{username.errors?.minlength?.requiredlength}}
+
+                <div *ngIf="username.errors?.pattern">*please enter appropriate pattern
+
+                </div>
+              </div>
+             </div>
+            
+             <div class="form-group"> 
+                <label for="">Comments :: </label>
+                <textarea class="form-control" placeholder="Enter the Comments"
+                ngModel name="comment"
+                #comment="ngModel"required cols="30" rows="10"></textarea>
+
+                <div class="alert alert-danger"
+                 *ngIf="comment.touched && comment.invalid">**Please enter comment
+
+                </div>
+                
+            
+            
+                  </div>
+                 
+                  <button [disabled]="!f.valid" class="btn btn-outline-success">submit</button>
+                </form>
+                  <div class="checkbox">
+                    <label for="check1">
+                    <input type="checkbox" id="check1"
+                    ngModel name="issubscibed"
+                    #mail="ngModel" required>I agree all terms and condition
+                </label>
+                  </div>
+                  <div class="radio">
+                    <label for="con0">
+                        <input ngModel name="con"
+                        #cont="ngModel" type="radio" value="Email" required>Email
+                    </label>
+                </div>
+                <div class="radio">
+                  <label for="con1">
+                    <input ngModel name="con"
+                    #temp="ngModel" type="radio" value="phone" required>Phone    >
+                  </label>
+
+                </div>
+                
+                <div class="form-group">
+                  <label for="coutry">Country</label>
+                  <select ngModel name="country"
+                  id="country" class="form-control"required >
+
+                  <!-- <option *ngFor="let item of country" -->
+                   <!-- [value]="item.cid">{{item.name}}</option> -->
+                  
+                   <option *ngFor="let item of country"
+                   [ngValue]="item">{{item.name}}
+
+                   </option>
+                  </select>
+                </div>
+               
+                
+
+                
+                <!-- <div class="form-group">
+                  <label for="myemail">Email</label>
+                  <input ngModel name="email"
+                  #email="ngModel" type="email" id="myemail"
+                  class="form-control"
+                  placeholder="Enter the email"
+                  pattern="EMAIL_PATTERN" required
+                  >
+                  <div class="alert alert-danger"
+                    *ngIf="email.touched && !email.valid">please enter the email
+                  <div *ngIf="email.errors?.pattern">**please enter valid email id</div>
+                  </div>
+
+                </div> -->
+
+                <div  class="form-group">
+                  
+
+                </div>
+                
+    
+              </div>
+</div>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>

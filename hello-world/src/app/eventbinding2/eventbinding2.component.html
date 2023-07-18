@@ -1,0 +1,22 @@
+<p>eventbinding2 works!</p>
+
+<!-- KeyBoardEvents -->
+<!-- 1.KeyUp event -->
+
+<input type="text"(keyup)="onKeyUp()" placeholder="Key Up event">
+<br><br>
+
+<input type="text"(keydown)="onKeyDown()" placeholder="Key down event">
+
+<!-- Event handing without event handler -->
+<br><br>
+<button (click)="result=8*8">Addition</button>
+<h3>{{result}}</h3>
+
+<!-- two way binding -->
+
+<input type="text" placeholder="Enter your name" [(ngModel)]="name">
+<h2>{{name}}</h2>
+
+<!-- structural directive -->
+<!-- *ngif -->
